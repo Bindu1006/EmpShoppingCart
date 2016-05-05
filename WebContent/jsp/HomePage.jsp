@@ -7,16 +7,20 @@
 	<title>CSS Free Templates with jQuery Slider</title>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<link rel="shortcut icon" href="../images/favicon.ico" />
-	<link rel="stylesheet" href="../css/style.css" type="text/css" media="all" />
-	<!--[if IE 6]>
-	<link rel="stylesheet" href="../css/ie6.css" type="text/css" media="all" />	
-	<![endif]-->
-	<link rel="stylesheet" href="../css/jquery.jscrollpane.css" type="text/css" media="all" />
-	<script src="../js/jquery-1.7.min.js" type="text/javascript"></script>
-	<script src="../js/DD_belatedPNG-min.js" type="text/javascript"></script>
-	<script src="../js/jquery.jscrollpane.min.js" type="text/javascript"></script>
-	<script src="../js/jquery.jcarousel.js" type="text/javascript"></script>
-	<script src="../js/functions.js" type="text/javascript"></script>
+<link rel="stylesheet" href="../css/style.css" type="text/css" media="all" />
+<link rel="stylesheet" href="../css/jquery.jscrollpane.css" type="text/css" media="all" />
+<link rel="stylesheet" type="text/css" media="all" href="../css/LoginStyle.css"/>
+  <!-- <script src="js/jquery-1.7.min.js" type="text/javascript"></script>
+  <script type="text/javascript" charset="utf-8" src="js/jquery.leanModal.min.js"></script> -->
+  <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery.leanModal.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+<script src="../js/DD_belatedPNG-min.js" type="text/javascript"></script>
+<script src="../js/jquery.jscrollpane.min.js" type="text/javascript"></script>
+<script src="../js/jquery.jcarousel.js" type="text/javascript"></script>
+<script src="../js/functions.js" type="text/javascript"></script>
+<script src="../js/showLoginPage.js" type="text/javascript"></script>
 	
 </head>
 <body>
@@ -66,48 +70,170 @@
 					<div class="cl"></div>				
 					<!-- END Navigation -->
 					<!-- Dropdown Navigation -->
-					<div id="sort-nav">						
+					<div id="sort-nav">	
+					<nav class="main-nav">					
 						<span class="label-left"></span>
 							<div class="label-bg">						
 							<ul>
 								<li>
-									<a title="Collections" href="#">Collections</a>							
+									<a title="Collections" href="#">Add/Modify Product</a>							
 									<div class="dd">
 										<ul>
-											<li><a title="Product" href="#">Product</a></li>
-											<li><a title="Product" href="#">Product</a></li>
-											<li><a title="Product" href="#">Product</a></li>
+											<li><a class="cd-signin" title="Product" href="#0">Add Product</a></li>
+											<li><a class="cd-signup" title="Product" href="#0">Search Product</a></li>
+											<!-- <li><a title="Product" href="#">Product</a></li> -->
 										</ul>																
 									</div>
 								</li>							
 								<li>
-									<a title="Brand" href="#">Brands</a>
-									<div class="dd">
-										<ul>
-											<li><a title="Product" href="#">Product</a></li>
-											<li><a title="Product" href="#">Product</a></li>
-											<li><a title="Product" href="#">Product</a></li>
-											<li><a title="Product" href="#">Product</a></li>												
-										</ul>
-									</div>
+									<a title="Brand" href="#">Customer Queries</a>
 								</li>
-								<li class="last">
-									<a title="By Price" class="By Price" href="#">By Price</a>
-									<div class="dd">
-										<ul>
-											<li><a title="Product" href="#">Product</a></li>
-											<li><a title="Product" href="#">Product</a></li>												
-										</ul>									
-									</div>
-								</li>
+								
 							</ul>
 						</div>
-						<span class="label-right"></span>									
+						<span class="label-right"></span>	
+						</nav>								
 					</div>					
-					<!-- END Dropdown Navigation -->
+					<!-- END Dropdown Navigation -->	
 					<div class="cl"></div>
 				</div>
 				<!-- END Header -->
+				
+				
+				
+				<div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
+		<div class="cd-user-modal-container"> <!-- this is the container wrapper -->
+			<ul class="cd-switcher">
+				<li><a href="#0">Sign in</a></li>
+				<li><a href="#0">New account</a></li>
+			</ul>
+
+			<div id="cd-login"> <!-- log in form -->
+			<form:form class="cd-form" id="loginForm" method="post" modelAttribute="EMP_INFO" name="loginForm" action="authenticateCustomers.do">
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signin-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="signin-email" type="text" placeholder="E-mail"/>
+						<!-- <input class="full-width has-padding has-border" id="signin-email" type="text" placeholder="E-mail"/> -->
+						<!-- <span class="cd-error-message">Error message here!</span> -->
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signin-password">Password</label>
+						<input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Password"/>
+						<!-- <input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Password"/> -->
+						<a href="#0" class="hide-password">Hide</a>
+						<!-- <span class="cd-error-message">Error message here!</span> -->
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="remember-me" checked/>
+						<label for="remember-me">Remember me</label>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width" type="button" value="Login" id="loginCustomer"/>
+					</p>
+				</form:form>>
+				
+				<p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
+				<!-- <a href="#0" class="cd-close-form">Close</a> -->
+			</div> <!-- cd-login -->
+
+			<div id="cd-signup"> <!-- sign up form -->
+			<form:form class="cd-form" id="registerForm" method="post" modelAttribute="EMP_INFO" name="registerForm" action="registerCustomers.do">
+					<p class="fieldset">
+						<label class="image-replace cd-username" for="signup-firstname">Firstname</label>
+						<input class="half-width has-padding has-border" id="signup-firstname" type="text" placeholder="Firstname"/>
+						<!-- <span class="cd-error-message">Error message here!</span> -->
+
+						<label class="image-replace cd-username" for="signup-lastname">Lastname</label>
+						<input class="half-width has-padding has-border" id="signup-lastname" type="text" placeholder="Lastname"/>
+						<!-- <span class="cd-error-message">Error message here!</span> -->
+					</p>
+					
+					<p class="fieldset">
+						<label class="image-replace cd-username" for="signup-username">Username</label>
+						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username"/>
+						<!-- <span class="cd-error-message">Error message here!</span> -->
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signup-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="signup-email" type="text" placeholder="E-mail"/>
+						<!-- <span class="cd-error-message">Error message here!</span> -->
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signup-password">Password</label>
+						<input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Password"/>
+						<a href="#0" class="hide-password">Hide</a>
+						<!-- <span class="cd-error-message">Error message here!</span> -->
+					</p>
+					
+					<p class="fieldset">
+						<label class="image-replace cd-phone" for="signup-userPhone">Contact Number</label>
+						<input class="half-width has-padding has-border" id="signup-phone" type="text" placeholder="Phone"/>
+						<!-- <span class="cd-error-message">Error message here!</span> -->
+						
+						<label class="image-replace cd-postalCode" for="signup-userPostalCode">Contact Number</label>
+						<input class="half-width has-padding has-border" id="signup-PostalCode" type="text" placeholder="Postal Code"/>
+					</p>
+					
+					<p class="fieldset">
+						<label class="image-replace cd-address" for="signup-userAddress">Address</label>
+						<input class="full-width has-padding has-border" id="signup-address" type="text" placeholder="Address"/>
+						<!-- <span class="cd-error-message">Error message here!</span> -->
+					</p>
+					
+					<p class="fieldset">
+						<label class="image-replace cd-city" for="signup-userCity">City</label>
+						<input class="half-width has-padding has-border" id="signup-city" type="text" placeholder="city"/>
+						<!-- <span class="cd-error-message">Error message here!</span> -->
+						
+						<label class="image-replace cd-country" for="signup-userCountry">Country</label>
+						<input class="half-width has-padding has-border" id="signup-country" type="text" placeholder="country"/>
+						<!-- <span class="cd-error-message">Error message here!</span> -->
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="accept-terms"/>
+						<label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="button" value="Create account" id="registerCustomer"/>
+					</p>
+				</form:form>
+
+				<!-- <a href="#0" class="cd-close-form">Close</a> -->
+			</div> <!-- cd-signup -->
+
+			<div id="cd-reset-password"> <!-- reset password form -->
+				<p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="reset-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="Reset password">
+					</p>
+				</form>
+
+				<p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
+			</div> <!-- cd-reset-password -->
+			<a href="#0" class="cd-close-form">Close</a>
+		</div> <!-- cd-user-modal-container -->
+	</div> <!-- cd-user-modal -->
+
+				
+				
+				
+				
+				
 				<!-- Main -->
 				<div id="main">
 					<!-- Slider -->
