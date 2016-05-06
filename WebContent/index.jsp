@@ -50,7 +50,7 @@
 		<nav class="main-nav">
 		<p class="shopping-cart">
 		<a class="login" href="secure/aad.do" title="Login and proceed to shop">Login as Emp</a>
-		<a class="cd-signin" href="#0">Sign in</a>
+		<a class="cd-signin" href="#0">Signing in</a>
 		<a class="cd-signup" href="#0">Sign up</a>
 		
 		</p>
