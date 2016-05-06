@@ -61,6 +61,7 @@ public class AadController {
                 model.addAttribute("EMP_INFO", empInfo);
                 model.addAttribute("users", data);
             } catch (Exception e) {
+                //error
                 model.addAttribute("error", e);
                 return "/error";
             }
