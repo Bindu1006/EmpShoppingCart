@@ -22,6 +22,7 @@ package com.sjsu.ad;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -39,7 +40,7 @@ import com.sjsu.ad.BO.EmployeeInfoBO;
 @Controller
 @RequestMapping("/secure/aad")
 public class AadController {
-    //updating to AWS code pipeline again an
+    //updating to AWS code pipeline again and again check
     @RequestMapping(method = { RequestMethod.GET, RequestMethod.POST })
     public String getDirectoryObjects(ModelMap model, HttpServletRequest httpRequest, @ModelAttribute("EMP_INFO") EmployeeInfoBO empInfo) {
         HttpSession session = httpRequest.getSession();
